@@ -32,10 +32,10 @@ const AuthForm = ({ mode }: any) => {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
 
-        if ((mode = "register")) {
-            await register(formState);
-        } else {
+        if (mode === "signin") {
             await signin(formState);
+        } else {
+            await register(formState);
         }
 
         setFormState(initial);
